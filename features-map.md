@@ -83,20 +83,8 @@
 
 | FeatureId      | FeatureName        | FeatureType | Summary                                      | Personas         | Requirements      | SpecFolders                             | Priority | Status      |
 |----------------|--------------------|-------------|----------------------------------------------|------------------|-------------------|------------------------------------------|----------|------------|
-| FEAT-001 | UX/UI (Baseline/System) | System | أساسيات واجهة المستخدم وتخطيط الصفحات وتناسق المكونات لتجربة استخدام ثابتة. | User, Visitor | NFR-001 | specifications/psec-kit-file/FEAT-001 | P0 | Planned |
-| FEAT-002 | تسجيل المستخدمين | Security | إنشاء حساب مستخدم (تسجيل) لتمكين امتلاك وإدارة السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-002 | P0 | Planned |
-| FEAT-003 | إنشاء CV من نموذج إدخال | CRUD | إنشاء سيرة ذاتية من نموذج إدخال وتخزينها لعرضها لاحقًا. | User |  | specifications/psec-kit-file/FEAT-003 | P0 | Planned |
-| FEAT-004 | تعديل CV للمستخدم | CRUD | تعديل بيانات السيرة الذاتية الخاصة بالمستخدم بعد إنشائها. | User |  | specifications/psec-kit-file/FEAT-004 | P0 | Planned |
-| FEAT-005 | صفحة واحدة لإدخال بيانات CV | CRUD | واجهة/صفحة موحّدة لإدخال بيانات السيرة الذاتية في مكان واحد. | User |  | specifications/psec-kit-file/FEAT-005 | P0 | Planned |
-| FEAT-006 | رفع/إضافة صورة شخصية | CRUD | رفع/إضافة صورة شخصية وربطها بالسيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-006 | P1 | Planned |
-| FEAT-007 | إدخال الاسم | CRUD | إدخال اسم صاحب السيرة الذاتية ضمن بيانات الـ CV. | User |  | specifications/psec-kit-file/FEAT-007 | P1 | Planned |
-| FEAT-008 | إدخال رقم الموبايل | CRUD | إدخال رقم الموبايل ضمن بيانات الـ CV. | User |  | specifications/psec-kit-file/FEAT-008 | P1 | Planned |
-| FEAT-009 | إدخال الخبرات | CRUD | إدخال الخبرات المهنية ضمن السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-009 | P1 | Planned |
-| FEAT-010 | إدخال التعليم | CRUD | إدخال بيانات التعليم ضمن السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-010 | P1 | Planned |
-| FEAT-011 | عرض جميع السير الذاتية المتاحة | Reporting | عرض قائمة السير الذاتية المتاحة للزوار/المهتمين للاطلاع. | Visitor, User |  | specifications/psec-kit-file/FEAT-011 | P0 | Planned |
-| FEAT-012 | تصدير CV للزوار مع إخفاء البيانات الحساسة | Reporting | تصدير/طباعة السيرة الذاتية للزوار بنسخة تخفي البيانات الحساسة. | Visitor |  | specifications/psec-kit-file/FEAT-012 | P0 | Planned |
-| FEAT-013 | بحث سريع في السير الذاتية | Search | بحث سريع ضمن السير الذاتية المتاحة للوصول لسيرة محددة بسهولة. | Visitor, User |  | specifications/psec-kit-file/FEAT-013 | P0 | Planned |
-| FEAT-014 | تصفية سريعة للسير الذاتية | Search | تصفية سريعة لقائمة السير الذاتية بحسب معايير بسيطة لتحسين الاستعراض. | Visitor, User |  | specifications/psec-kit-file/FEAT-014 | P0 | Planned |
+| FEAT-CV-CREATION | إنشاء السيرة الذاتية | CRUD | إنشاء/تعديل/عرض السيرة الذاتية (CV) عبر نموذج إدخال وتخزينها وربطها ببيانات المستخدم. | User |  | specifications/psec-kit-file/FEAT-CV-CREATION | P0 | Planned |
+| FEAT-USER-REGISTRATION | تسجيل المستخدمين | Security | تسجيل/تسجيل دخول المستخدمين لإتاحة امتلاك وإدارة السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-USER-REGISTRATION | P0 | Planned |
 
 أضف الصفوف الحقيقية هنا أسفل المثال ↑.
 
@@ -148,19 +136,20 @@
 
 المثال التالي فقط لتوضيح كيفية تعبئة التفاصيل. غيّره بما يناسب مشروعك.
 
-### FEAT-CITIES – City Management
+### FEAT-CV-CREATION – إنشاء السيرة الذاتية
 **Type:** CRUD  
-**Summary:** إدارة المدن (إضافة مدينة جديدة، تعديل بيانات مدينة، حذف/تعطيل مدينة، عرض قائمة المدن مع البحث والفلاتر البسيطة).  
-**Personas:** Admin  
-**Requirements:** FR-10, FR-11 (أمثلة؛ غيّرها بما يناسبك)  
+**Summary:** تمكين المستخدم من إنشاء السيرة الذاتية عبر نموذج إدخال، حفظها في قاعدة البيانات، ثم عرضها/تحديثها من خلال واجهة Angular وربطها بخدمات Backend.  
+**Personas:** User  
+**Requirements:**  
 **Spec Folders / Files:**  
-- `specifications/04-domain/locations.md`  
-- `specifications/07-api/cities-api.md`  
-- `specifications/08-ui/cities-screens.md`  
+- `specifications/psec-kit-file/FEAT-CV-CREATION/clarify.md`  
+- `specifications/psec-kit-file/FEAT-CV-CREATION/plan.md`  
+- `specifications/psec-kit-file/FEAT-CV-CREATION/specify.md`  
+- `specifications/psec-kit-file/FEAT-CV-CREATION/tasks.md`  
 
 **Dependencies / Relations:**  
-- تعتمد على: FEAT-AUTH (لمنع الوصول لغير المديرين)  
-- تؤثر على: FEAT-REPORTS (تقارير تعتمد على المدن)، FEAT-SEARCH (بحث حسب المدينة)  
+- تعتمد على: FEAT-USER-REGISTRATION (الهوية/تسجيل الدخول لامتلاك السيرة)  
+- تؤثر على: (لاحقًا) ميزات البحث/القائمة/التصدير عند إضافتها  
 
 **KPI Template:**  
 - `specifications/12-testing/kpi-crud-template.md`
@@ -169,10 +158,27 @@
 - `cursor_prompt_feature-crud.txt`
 
 **Notes / Open Questions:**  
-- هل نحتاج حقل كود المدينة (Code) موحّد مع نظام خارجي؟  
-- هل نسمح بالتعطيل بدل الحذف النهائي؟
+- هل لكل مستخدم CV واحدة أم عدة CVs؟
 
----
+### FEAT-USER-REGISTRATION – تسجيل المستخدمين
+**Type:** Security  
+**Summary:** إنشاء حسابات المستخدمين وتسجيل الدخول/إدارة الجلسة لتمكين امتلاك السيرة الذاتية وربطها بالمستخدم.  
+**Personas:** User  
+**Requirements:**  
+**Spec Folders / Files:**  
+- `specifications/psec-kit-file/FEAT-USER-REGISTRATION/clarify.md`  
+- `specifications/psec-kit-file/FEAT-USER-REGISTRATION/plan.md`  
+- `specifications/psec-kit-file/FEAT-USER-REGISTRATION/specify.md`  
+- `specifications/psec-kit-file/FEAT-USER-REGISTRATION/tasks.md`  
 
-بعد هذا المثال، ابدأ بإضافة سكاشن حقيقية لكل Feature في مشروعك بنفس القالب.
-يمكنك ترتيبها حسب الأولوية أو حسب الدومين (Auth, Users, Search, Reporting, AI, Integration, ...).
+**Dependencies / Relations:**  
+- تؤثر على: FEAT-CV-CREATION (يتطلب مستخدم مسجل/مُعرّف)  
+
+**KPI Template:**  
+- `specifications/12-testing/kpi-security-template.md`
+
+**Recommended Feature Prompt (Cursor):**  
+- `cursor_prompt_feature-security.txt`
+
+**Notes / Open Questions:**  
+- تفاصيل استرجاع كلمة المرور/سياسات القفل ومحاولات الدخول غير محسومة ضمن المتطلبات.
