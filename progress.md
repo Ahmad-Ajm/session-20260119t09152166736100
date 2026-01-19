@@ -11,7 +11,7 @@
 
 | clarify | plan | specify | tasks | الميزة في SpecKit | ID الميزة | تقدم SpecKit | Backend | Frontend |
 |---|---|---|---|---|---|---:|---|---|
-| NotStarted | NotStarted | NotStarted | NotStarted | UX/UI (Baseline/System) | FEAT-001 | 0% | NotStarted | NotStarted |
+| Done | Done | Done | Done | UX/UI (Baseline/System) | FEAT-001 | 100% | Skipped | InProgress |
 | NotStarted | NotStarted | NotStarted | NotStarted | تسجيل المستخدمين | FEAT-002 | 0% | NotStarted | NotStarted |
 | NotStarted | NotStarted | NotStarted | NotStarted | إنشاء CV من نموذج إدخال | FEAT-003 | 0% | NotStarted | NotStarted |
 | NotStarted | NotStarted | NotStarted | NotStarted | تعديل CV للمستخدم | FEAT-004 | 0% | NotStarted | NotStarted |
@@ -40,13 +40,13 @@
 
 ### الحالة الحالية
 - ✅ تم جمع المتطلبات وتلخيصها (المصدر المعتمد: `conversation-summary.md`).
-- 🟡 تم تحديث خريطة الميزات `features-map.md`.
-- ❌ لم يبدأ SpecKit بعد (سنبدأ بـ FEAT-001).
+- ✅ SpecKit لميزة FEAT-001 مكتمل.
+- 🟡 جاري تنفيذ كود FEAT-001 (واجهة Baseline).
 
 ### مراحل التطوير (تقديريًا على مستوى المشروع)
 1. جمع المتطلبات: 100%
-2. SpecKit: 0%
-3. كتابة الأكواد: 0%
+2. SpecKit: 7% (FEAT-001 من 14)
+3. كتابة الأكواد: 3% (بدء FEAT-001)
 4. الاختبار: 0%
 5. النشر: 0%
 
@@ -55,5 +55,5 @@
 ## 🔄 آخر تحديث
 - **التاريخ**: 2026-01-19
 - **التغييرات**:
-  - تهيئة تتبع التقدم لكل الميزات FEAT-001..014
-  - تجهيز الخطوة التالية: تشغيل SpecKit لميزة FEAT-001
+  - اكتمال SpecKit لميزة FEAT-001
+  - بدء تنفيذ Build-App لميزة FEAT-001
