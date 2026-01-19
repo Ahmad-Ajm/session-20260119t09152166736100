@@ -1,165 +1,200 @@
 # Features Map – Project Feature Inventory
 
-هذا الملف هو الخريطة المركزية لجميع الميزات (Features / Epics) في المشروع.
-الهدف منه:
+هذه الخريطة هي مرجع الميزات (Features/Epics) للمشروع.
 
-- إعطاء صورة واضحة عن **كل ميزة**: ماذا تفعل؟ لمن؟ وأين توجد مواصفاتها؟
-- ربط كل ميزة بنوعها **FeatureType** لاختيار قالب الـ KPI والـ Prompt المناسب.
-- أن يكون نقطة البداية لأي عمل جديد على الميزات (Spec Kit, Feature Factory, Testing).
-
-## Feature Types & KPI Templates
-
-لكل ميزة يتم تحديدها في جدول الـ Features يجب تعيين قيمة **FeatureType** بدقة.  
-ويتم استخدام **قوالب KPI Templates المتخصصة** لضمان جودة ثابتة لكل نوع من الميزات.
+- **المصدر المعتمد للمواصفات عالية المستوى**: `conversation-summary.md` (ممنوع تعديلها).
+- عند نقص تفاصيل: نعتمد افتراضات معقولة في SpecKit لكل ميزة.
 
 ---
 
-## 1. أنواع الميزات (FeatureType)
+## 1) جدول الميزات (Overview)
 
-استخدم أحد القيم التالية في عمود `FeatureType`:
-
-- `CRUD`          – ميزات إنشاء/عرض/تعديل/حذف لكيان معيّن (Full Stack).
-- `Reporting`     – تقارير ولوحات تحكم وتحليلات.
-- `Search`        – بحث وفلاتر وترتيب ونتائج.
-- `Workflow`      – حالات وموافقات وتدفقات عمل.
-- `Notifications` – إشعارات Email / SMS / Push / In-App.
-- `Integration`   – تكامل مع أنظمة أو APIs خارجية.
-- `AI`            – ميزات ذكاء صناعي (Chat, RAG, Agents, Recommendations...).
-- `Security`      – صلاحيات، أدوار، سياسات أمان، Auth / AuthZ.
-
-يمكن إضافة أنواع أخرى لاحقًا 
-
-### العلاقة الإلزامية بين FeatureType وقالب الـ KPI:
-
-- عند تحديد `FeatureType = CRUD`  
-  يجب استخدام قالب الـ KPI التالي كـ **Definition of Done** للميزة:  
-  `specifications/12-testing/kpi-crud-template.md`
-
-- عند تحديد `FeatureType = Reporting`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-reporting-template.md`
-
-- عند تحديد `FeatureType = Search`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-search-template.md`
-
-- عند تحديد `FeatureType = Workflow`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-workflow-template.md`
-
-- عند تحديد `FeatureType = Notifications`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-notifications-template.md`
-
-- عند تحديد `FeatureType = Integration`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-integration-template.md`
-
-- عند تحديد `FeatureType = AI`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-ai-template.md`
-
-- عند تحديد `FeatureType = Security`  
-  يجب استخدام قالب الـ KPI التالي:  
-  `specifications/12-testing/kpi-security-template.md`
----
-
-## 2. نظرة عامة – جدول الميزات
-
-املأ هذا الجدول لكل Feature رئيسية في المشروع.
-
-- **FeatureId**: معرف قصير ثابت (FEAT-XXXX).
-- **FeatureName**: اسم الميزة بشكل مفهوم للبشر.
-- **FeatureType**: أحد الأنواع المذكورة أعلاه.
-- **Summary**: ملخّص قصير (سطر واحد) لوظيفة الميزة.
-- **Personas**: من سيستخدم هذه الميزة؟ (User, Admin, Owner, Broker, ...).
-- **Requirements**: معرفات المتطلبات المرتبطة (FR-01, NFR-02, ... إن وُجدت).
-- **SpecFolders**: المجلدات/الملفات في `specifications/*` التي تتعلق بهذه الميزة.
-- **Priority**: أولوية التنفيذ (P0, P1, P2, ...).
-- **Status**: حالة الميزة (Planned, In-Progress, Done, Deprecated, ...).
-
-> 👇 النموذج التالي يحتوي صفًا واحدًا **مثالًا فقط**.
-> عدّل القيم أو انسخ الصف وأضف صفوفًا جديدة لكل ميزة.
-
-| FeatureId      | FeatureName        | FeatureType | Summary                                      | Personas         | Requirements      | SpecFolders                             | Priority | Status      |
-|----------------|--------------------|-------------|----------------------------------------------|------------------|-------------------|------------------------------------------|----------|------------|
-| FEAT-001-EXAMPLE01 | Example Feature    | CRUD        | مثال لميزة CRUD كاملة (إنشاء/عرض/تعديل/حذف) | Admin, User      | FR-EX-01, FR-EX-02 | 04-domain, 07-api, 08-ui                | P1       | Planned    |
-
-أضف الصفوف الحقيقية هنا أسفل المثال ↑.
+| FeatureId | FeatureName | FeatureType | Summary | Personas | Requirements | SpecFolders | Priority | Status |
+|---|---|---|---|---|---|---|---|---|
+| FEAT-001 | UX/UI (Baseline/System) | CRUD | هيكل واجهة أساسي يعمل (Routing/Layout) + صفحات Placeholder لتدفق CV بدون تفاعل عميق | User, Visitor | NFR-001 | 08-ui | P0 | Planned |
+| FEAT-002 | تسجيل المستخدمين | Security | تسجيل/تسجيل دخول أساسي للمستخدمين لامتلاك CV | User |  | 04-domain,07-api,08-ui | P0 | Planned |
+| FEAT-003 | إنشاء CV من نموذج إدخال | CRUD | إنشاء CV وربطه بالمستخدم | User |  | 04-domain,07-api,08-ui | P0 | Planned |
+| FEAT-004 | تعديل CV للمستخدم | CRUD | تعديل CV الحالي للمستخدم | User |  | 07-api,08-ui | P1 | Planned |
+| FEAT-005 | صفحة واحدة لإدخال بيانات CV | UX | صفحة واحدة تجمع أقسام CV (Wizard-less) | User | NFR-001 | 08-ui | P1 | Planned |
+| FEAT-006 | رفع/إضافة صورة شخصية | CRUD | رفع صورة وتخزينها وربطها بـ CV | User |  | 04-domain,07-api,08-ui | P1 | Planned |
+| FEAT-007 | إدخال الاسم | CRUD | حقل الاسم ضمن بيانات CV | User |  | 04-domain,08-ui | P0 | Planned |
+| FEAT-008 | إدخال رقم الموبايل | CRUD | حقل رقم الموبايل ضمن بيانات CV مع قواعد تحقق | User |  | 04-domain,08-ui | P0 | Planned |
+| FEAT-009 | إدخال الخبرات | CRUD | إدارة خبرات متعددة ضمن CV | User |  | 04-domain,07-api,08-ui | P1 | Planned |
+| FEAT-010 | إدخال التعليم | CRUD | إدارة تعليم متعدد ضمن CV | User |  | 04-domain,07-api,08-ui | P1 | Planned |
+| FEAT-011 | عرض جميع السير الذاتية المتاحة | Reporting | صفحة قائمة CVs قابلة للعرض للزوار حسب سياسة خصوصية افتراضية | Visitor |  | 07-api,08-ui | P0 | Planned |
+| FEAT-012 | تصدير CV للزوار مع إخفاء البيانات الحساسة | Reporting | تصدير/طباعة CV بنسخة Public تخفي الحقول الحساسة (افتراضيًا: الموبايل) | Visitor |  | 07-api,08-ui | P1 | Planned |
+| FEAT-013 | بحث سريع في السير الذاتية | Search | بحث نصي سريع في قائمة CVs (اسم/خبرات) | Visitor | NFR-001 | 07-api,08-ui | P1 | Planned |
+| FEAT-014 | تصفية سريعة للسير الذاتية | Search | فلاتر بسيطة (مثلاً: تعليم/سنوات خبرة) | Visitor | NFR-001 | 07-api,08-ui | P2 | Planned |
 
 ---
 
-## 3. تفاصيل الميزات (Feature Details)
+## 2) تفاصيل الميزات (Feature Details)
 
-اكتب سكشن منفصل لكل Feature، بنفس القالب التالي.
-يمكنك نسخ الـ Template ولصقه لكل ميزة ثم تعبئته.
-
-> لا تحذف هذا القالب؛ فقط انسخه أسفله لكل ميزة.
-
-### Template – انسخ هذا البلوك لكل ميزة جديدة
-
-```md
-### <FeatureId> – <FeatureName>
-**Type:** <FeatureType>  
-**Summary:** وصف مختصر للميزة في سطر أو سطرين يوضح الهدف التجاري.  
-**Personas:** اذكر المستخدمين أو الأدوار المستهدفة (مثال: Admin, Owner, Buyer).  
-**Requirements:** FR-xx, NFR-xx (إن وُجدت) أو اتركها فارغة مؤقتًا.  
-**Spec Folders / Files:**  
-- `specifications/XX-something/...`
-- `specifications/YY-other/...`
-
-**Dependencies / Relations:**  
-- تعتمد على: (مثال: FEAT-AUTH, FEAT-SEARCH)  
-- تؤثر على: (مثال: FEAT-REPORTS)
-
-**KPI Template:**  
-- إذا كان النوع `CRUD` → استخدم: `specifications/12-testing/kpi-crud-template.md`  
-- إذا كان `Reporting` → استخدم: `specifications/12-testing/kpi-reporting-template.md`  
-- إذا كان `Search` → استخدم: `specifications/12-testing/kpi-search-template.md`  
-- إذا كان `Workflow` → استخدم: `specifications/12-testing/kpi-workflow-template.md`  
-- إذا كان `Notifications` → استخدم: `specifications/12-testing/kpi-notifications-template.md`  
-- إذا كان `Integration` → استخدم: `specifications/12-testing/kpi-integration-template.md`  
-- إذا كان `AI` → استخدم: `specifications/12-testing/kpi-ai-template.md`  
-- إذا كان `Security` → استخدم: `specifications/12-testing/kpi-security-template.md`
-
-**Recommended Feature Prompt (Cursor):**  
-- `cursor_prompt_feature-<type>.txt`
-
-**Notes / Open Questions:**  
-- ضع هنا أي أسئلة أو نقاط غير محسومة بعد.
-```
-
----
-
-## 4. مثال عملي مكتمل لميزة واحدة (يمكنك حذفه أو تعديله)
-
-المثال التالي فقط لتوضيح كيفية تعبئة التفاصيل. غيّره بما يناسب مشروعك.
-
-### FEAT-CITIES – City Management
+### FEAT-001 – UX/UI (Baseline/System)
 **Type:** CRUD  
-**Summary:** إدارة المدن (إضافة مدينة جديدة، تعديل بيانات مدينة، حذف/تعطيل مدينة، عرض قائمة المدن مع البحث والفلاتر البسيطة).  
-**Personas:** Admin  
-**Requirements:** FR-10, FR-11 (أمثلة؛ غيّرها بما يناسبك)  
-**Spec Folders / Files:**  
-- `specifications/04-domain/locations.md`  
-- `specifications/07-api/cities-api.md`  
-- `specifications/08-ui/cities-screens.md`  
+**Summary:** تأسيس واجهة Angular مع Layout/Navigation + Routing وصفحات Placeholder لمسارات: Home, Register/Login, My CV, Public CV List, CV Details/Export.  
+**Personas:** User, Visitor  
+**Requirements:** NFR-001  
+**Spec Folders / Files:**
+- `specifications/08-ui/*`
 
-**Dependencies / Relations:**  
-- تعتمد على: FEAT-AUTH (لمنع الوصول لغير المديرين)  
-- تؤثر على: FEAT-REPORTS (تقارير تعتمد على المدن)، FEAT-SEARCH (بحث حسب المدينة)  
+**Dependencies / Relations:**
+- تعتمد على: لا شيء (Baseline)
+- تؤثر على: كل الميزات الأمامية
 
-**KPI Template:**  
-- `specifications/12-testing/kpi-crud-template.md`
-
-**Recommended Feature Prompt (Cursor):**  
-- `cursor_prompt_feature-crud.txt`
-
-**Notes / Open Questions:**  
-- هل نحتاج حقل كود المدينة (Code) موحّد مع نظام خارجي؟  
-- هل نسمح بالتعطيل بدل الحذف النهائي؟
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md` (للبنية الأساسية: قابلية التشغيل/التحكم بالملاحة)  
+**Notes / Open Questions:**
+- سنعتمد Arabic-first و RTL افتراضيًا ما لم يُذكر خلاف ذلك.
 
 ---
 
-بعد هذا المثال، ابدأ بإضافة سكاشن حقيقية لكل Feature في مشروعك بنفس القالب.
-يمكنك ترتيبها حسب الأولوية أو حسب الدومين (Auth, Users, Search, Reporting, AI, Integration, ...).
+### FEAT-002 – تسجيل المستخدمين
+**Type:** Security  
+**Summary:** تسجيل مستخدم جديد وتسجيل دخول وتسجيل خروج لإتاحة امتلاك CV.  
+**Personas:** User  
+**Spec Folders / Files:**
+- `specifications/04-domain/*`, `specifications/07-api/*`, `specifications/08-ui/*`
+
+**Dependencies / Relations:**
+- تعتمد على: FEAT-001
+- تؤثر على: FEAT-003/004/005/006
+
+**KPI Template:** `specifications/12-testing/kpi-security-template.md`
+
+---
+
+### FEAT-003 – إنشاء CV من نموذج إدخال
+**Type:** CRUD  
+**Summary:** إنشاء CV (واحد لكل مستخدم افتراضيًا) عبر نموذج إدخال وتخزينه في DB.  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-001, FEAT-002
+- تؤثر على: FEAT-004..010
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+**Assumption:** افتراضيًا لكل مستخدم CV واحدة (يمكن تغييرها لاحقًا).
+
+---
+
+### FEAT-004 – تعديل CV للمستخدم
+**Type:** CRUD  
+**Summary:** تعديل بيانات CV للمستخدم المسجل.  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+---
+
+### FEAT-005 – صفحة واحدة لإدخال بيانات CV
+**Type:** UX  
+**Summary:** صفحة واحدة تجمع الأقسام الأساسية: الاسم/الموبايل/الصورة/الخبرات/التعليم (بدون Wizard).  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-001, FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md` (مؤقتًا)
+
+---
+
+### FEAT-006 – رفع/إضافة صورة شخصية
+**Type:** CRUD  
+**Summary:** رفع صورة شخصية وتخزينها (مع حجم أقصى افتراضي) وربطها بـ CV.  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+---
+
+### FEAT-007 – إدخال الاسم
+**Type:** CRUD  
+**Summary:** حقل الاسم ضمن CV مع تحقق بسيط.  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+---
+
+### FEAT-008 – إدخال رقم الموبايل
+**Type:** CRUD  
+**Summary:** رقم موبايل ضمن CV مع قواعد تحقق (تنسيق دولي مبسط).  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+---
+
+### FEAT-009 – إدخال الخبرات
+**Type:** CRUD  
+**Summary:** إدارة عناصر خبرة متعددة (Company/Role/From/To/Description افتراضيًا).  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+---
+
+### FEAT-010 – إدخال التعليم
+**Type:** CRUD  
+**Summary:** إدارة عناصر تعليم متعددة (Institution/Degree/From/To/Notes افتراضيًا).  
+**Personas:** User  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-003
+
+**KPI Template:** `specifications/12-testing/kpi-crud-template.md`
+
+---
+
+### FEAT-011 – عرض جميع السير الذاتية المتاحة
+**Type:** Reporting  
+**Summary:** قائمة بالسير الذاتية المتاحة للعرض العام مع تفاصيل مختصرة وربط لصفحة تفاصيل.  
+**Personas:** Visitor  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-001
+- تؤثر على: FEAT-013/014/012
+
+**KPI Template:** `specifications/12-testing/kpi-reporting-template.md`
+
+**Assumption:** افتراضيًا تعرض القائمة فقط السير الذاتية التي وافق صاحبها على الإتاحة (حقل IsPublic افتراضي false).
+
+---
+
+### FEAT-012 – تصدير CV للزوار مع إخفاء البيانات الحساسة
+**Type:** Reporting  
+**Summary:** تصدير/طباعة نسخة Public من CV تخفي البيانات الحساسة (افتراضيًا: رقم الموبايل).  
+**Personas:** Visitor  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-011
+
+**KPI Template:** `specifications/12-testing/kpi-reporting-template.md`
+
+---
+
+### FEAT-013 – بحث سريع في السير الذاتية
+**Type:** Search  
+**Summary:** بحث سريع نصي في قائمة CVs (الاسم + مسميات الخبرات).  
+**Personas:** Visitor  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-011
+
+**KPI Template:** `specifications/12-testing/kpi-search-template.md`
+
+---
+
+### FEAT-014 – تصفية سريعة للسير الذاتية
+**Type:** Search  
+**Summary:** فلاتر بسيطة (مثال: حد أدنى سنوات خبرة، مجال/درجة تعليم).  
+**Personas:** Visitor  
+**Dependencies / Relations:**
+- تعتمد على: FEAT-011
+
+**KPI Template:** `specifications/12-testing/kpi-search-template.md`
