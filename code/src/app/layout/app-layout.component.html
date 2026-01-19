@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" routerLink="/">منصة السير الذاتية</a>
+
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">الرئيسية</a>
+      <a routerLink="/cvs" routerLinkActive="is-active">السير الذاتية</a>
+      <a routerLink="/my-cv" routerLinkActive="is-active">سيرتي</a>
+      <a routerLink="/auth/login" routerLinkActive="is-active">دخول</a>
+      <a routerLink="/auth/register" routerLinkActive="is-active">تسجيل</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <router-outlet />
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© {{ year }} منصة السير الذاتية</span>
+    <span class="sep">|</span>
+    <a class="footer__link" routerLink="/cvs/demo">مثال: تفاصيل سيرة (demo)</a>
+  </div>
+</footer>
