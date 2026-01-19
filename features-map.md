@@ -83,9 +83,20 @@
 
 | FeatureId      | FeatureName        | FeatureType | Summary                                      | Personas         | Requirements      | SpecFolders                             | Priority | Status      |
 |----------------|--------------------|-------------|----------------------------------------------|------------------|-------------------|------------------------------------------|----------|------------|
-| FEAT-EXAMPLE01 | Example Feature    | CRUD        | مثال لميزة CRUD كاملة (إنشاء/عرض/تعديل/حذف) | Admin, User      | FR-EX-01, FR-EX-02 | 04-domain, 07-api, 08-ui                | P1       | Planned    |
-| FEAT-CV-CREATION | CV Creation | CRUD | إنشاء/تعديل/عرض السيرة الذاتية عبر نموذج إدخال وتخزينها لعرضها لاحقًا. | User, Visitor |  | specifications/psec-kit-file/FEAT-CV-CREATION | P0 | Planned |
-| FEAT-USER-REGISTRATION | User Registration | Security | تسجيل المستخدمين وتسجيل الدخول وإدارة ملف المستخدم الأساسي (حساب/جلسة). | User |  | specifications/psec-kit-file/FEAT-USER-REGISTRATION | P0 | Planned |
+| FEAT-001 | UX/UI (Baseline/System) | System | أساسيات واجهة المستخدم وتخطيط الصفحات وتناسق المكونات لتجربة استخدام ثابتة. | User, Visitor | NFR-001 | specifications/psec-kit-file/FEAT-001 | P0 | Planned |
+| FEAT-002 | تسجيل المستخدمين | Security | إنشاء حساب مستخدم (تسجيل) لتمكين امتلاك وإدارة السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-002 | P0 | Planned |
+| FEAT-003 | إنشاء CV من نموذج إدخال | CRUD | إنشاء سيرة ذاتية من نموذج إدخال وتخزينها لعرضها لاحقًا. | User |  | specifications/psec-kit-file/FEAT-003 | P0 | Planned |
+| FEAT-004 | تعديل CV للمستخدم | CRUD | تعديل بيانات السيرة الذاتية الخاصة بالمستخدم بعد إنشائها. | User |  | specifications/psec-kit-file/FEAT-004 | P0 | Planned |
+| FEAT-005 | صفحة واحدة لإدخال بيانات CV | CRUD | واجهة/صفحة موحّدة لإدخال بيانات السيرة الذاتية في مكان واحد. | User |  | specifications/psec-kit-file/FEAT-005 | P0 | Planned |
+| FEAT-006 | رفع/إضافة صورة شخصية | CRUD | رفع/إضافة صورة شخصية وربطها بالسيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-006 | P1 | Planned |
+| FEAT-007 | إدخال الاسم | CRUD | إدخال اسم صاحب السيرة الذاتية ضمن بيانات الـ CV. | User |  | specifications/psec-kit-file/FEAT-007 | P1 | Planned |
+| FEAT-008 | إدخال رقم الموبايل | CRUD | إدخال رقم الموبايل ضمن بيانات الـ CV. | User |  | specifications/psec-kit-file/FEAT-008 | P1 | Planned |
+| FEAT-009 | إدخال الخبرات | CRUD | إدخال الخبرات المهنية ضمن السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-009 | P1 | Planned |
+| FEAT-010 | إدخال التعليم | CRUD | إدخال بيانات التعليم ضمن السيرة الذاتية. | User |  | specifications/psec-kit-file/FEAT-010 | P1 | Planned |
+| FEAT-011 | عرض جميع السير الذاتية المتاحة | Reporting | عرض قائمة السير الذاتية المتاحة للزوار/المهتمين للاطلاع. | Visitor, User |  | specifications/psec-kit-file/FEAT-011 | P0 | Planned |
+| FEAT-012 | تصدير CV للزوار مع إخفاء البيانات الحساسة | Reporting | تصدير/طباعة السيرة الذاتية للزوار بنسخة تخفي البيانات الحساسة. | Visitor |  | specifications/psec-kit-file/FEAT-012 | P0 | Planned |
+| FEAT-013 | بحث سريع في السير الذاتية | Search | بحث سريع ضمن السير الذاتية المتاحة للوصول لسيرة محددة بسهولة. | Visitor, User |  | specifications/psec-kit-file/FEAT-013 | P0 | Planned |
+| FEAT-014 | تصفية سريعة للسير الذاتية | Search | تصفية سريعة لقائمة السير الذاتية بحسب معايير بسيطة لتحسين الاستعراض. | Visitor, User |  | specifications/psec-kit-file/FEAT-014 | P0 | Planned |
 
 أضف الصفوف الحقيقية هنا أسفل المثال ↑.
 
